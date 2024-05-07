@@ -4,10 +4,16 @@ import Calendar from './calendar';
 
 function Home() {
 
-    const [workoutlist, setWorkoutList] = useState([{workout: ''}, {workout: ''}])
+    const [workoutlist, setWorkoutList] = useState([{workout: ''}])
 
-    function addWorkout(){
+    const addWorkout = () => {
+        setWorkoutList([...workoutlist, {service: ""}])
+    }
 
+    const removeWorkout = (index) =>{
+        const list = [...workoutlist]
+        list.splice(index, 1)
+        setWorkoutList(list)
     }
 
   return (
@@ -23,9 +29,11 @@ function Home() {
             {workoutlist.map((singleWorkout, index) => (
             <div key="index" className="workouts">
                 <input></input>
+                <button onClick={()=>removeWorkout(index)}>Remove</button>
+                <br></br>
                 {workoutlist.length - 1 === index && 
                 (
-                <button>Add</button>
+                <button onClick={addWorkout}>Add</button>
                 )}
             </div>
             ))}
