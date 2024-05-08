@@ -31,9 +31,26 @@ function Home() {
             <h2>Date:</h2>
                 <input></input>
             <h2>Day:</h2>
-                <input></input>
+            <select>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+
+                </select>
             <h2>Muscle Group:</h2>
-                <input></input>
+                <select>
+                    <option>Legs</option>
+                    <option>Arms</option>
+                    <option>Shoulder</option>
+                    <option>Chest</option>
+                    <option>Back</option>
+                    <option>Abs</option>
+
+                </select>
             <h2>Workouts:</h2>
             {workoutlist.map((singleWorkout, index) => (
             <div key={index} className="workouts">
